@@ -2,5 +2,5 @@
 
 같이보기 링크 [velog ](https://velog.io/@currysoda/posts?tag=Java)
 
-1. 클래스, 클래스
-2. 인터페이스와 추상클래스
+- 클래스, 상속, 다형성
+- 인터페이스와 추상클래스
