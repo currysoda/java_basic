@@ -43,5 +43,6 @@ public class Main {
 		System.out.println("bd5 = " + bd5); // 0.16
 		System.out.println("bd6 = " + bd6); // 16
 		
+		
 	}
 }
