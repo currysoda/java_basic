@@ -15,7 +15,7 @@ public class Main {
 		
 		System.out.println("=========================================");
 		
-		// 세 번째 파라미터로 true 입력시 구분자또한 출력한다. (기본은 false)
+		// 세 번째 파라미터로 true 입력시 구분자 또한 출력한다. (기본은 false)
 		StringTokenizer st2 = new StringTokenizer("PM:08:35", ":", true);
 		
 		while (st2.hasMoreTokens()) {
@@ -25,7 +25,7 @@ public class Main {
 		
 		// 구분자가 여러개일 경우 전부 두 번째 문자열에 같이 써 넣는다.
 		// 공백문자도 하나의 구분자이다.
-		// StringTokenizer 는 정규표현식을 쓸 수 없다. 정규 표현식을 사용해야 할 경우 String.split()을 쓴다.
+		// StringTokenizer 는 정규표현식을 쓸 수 없다. 정규 표현식을 사용해야 할 경우 String.split() 을 쓴다.
 		StringTokenizer st3 = new StringTokenizer("12 + 36 - 8 / 2 = 44", "+-=/ ", true);
 		
 		while (st3.hasMoreTokens()) {

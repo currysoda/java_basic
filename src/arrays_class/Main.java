@@ -1,5 +1,6 @@
 package arrays_class;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -75,9 +76,12 @@ public class Main {
 		System.out.println("arr2 = " + Arrays.toString(arr2)); // arr2 = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
 		
 		// Arrays.asList()
-		// 배열을 불변 리스트로 반환해준다.
+		// 배열을 불변 리스트로 반환해준다. 불변 리스트는 요소의 추가 삭제가 불가능하다.
 		// 일반적인 List 가 아님에 주의 List 처럼 사용하려면 불변 리스트를 ArrayList 의 생성자로 사용한다.
-		List<Integer> list1 = Arrays.asList();
+		Integer[]     wraparr1 = new Integer[]{1, 2, 3}; // 컬렉션은 래퍼 클래스만 인자로 가능
+		List<Integer> list1    = new ArrayList<>(Arrays.asList(wraparr1));
+		
+		System.out.println("list1 = " + list1); // list1 = [1, 2, 3]
 		
 	}
 }
