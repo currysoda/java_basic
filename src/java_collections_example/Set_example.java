@@ -3,11 +3,15 @@ package java_collections_example;
 import java.util.ArrayDeque;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.Deque;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
+import java.util.Stack;
 import java.util.TreeSet;
+import java.util.Vector;
 
 // Comparator<T> 의 구현
 class TreeNodeComparator implements Comparator<TreeNode> {
@@ -131,6 +135,16 @@ public class Set_example {
 		// Queue 와 Stack
 		Queue<Integer> que1 = new ArrayDeque<>();
 		
+		// Stack 클래스는 하위 버전 지원용으로 남아있고 실제로 사용하지 않는걸 권장함
+		// 권장하지 않는 클래스
+		Stack<Integer> stack1 = new Stack<>();
+		
+		// Stack 클래스 대신 Deque 사용
+		Deque<Integer> deque1 = new ArrayDeque<>();
+		
+		deque1.add(1);
+		deque1.add(2);
+		deque1.add(3);
 		
 	}
 }
