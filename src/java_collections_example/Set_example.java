@@ -145,6 +145,26 @@ public class Set_example {
 		deque1.add(1);
 		deque1.add(2);
 		deque1.add(3);
+		deque1.add(5);
+		deque1.add(4);
+		
+		System.out.println("deque1 = " + deque1);
+		
+		// ArrayDeque 이 제공하는 메소드
+		// 문제상황에서 예외를 발생시키는 메소드
+		deque1.addFirst(0);
+		deque1.removeFirst();
+		deque1.getFirst();
+		
+		deque1.addLast(6);
+		deque1.removeLast();
+		deque1.getLast();
+		
+		// 예외 발생 예시
+		
+		
+		// 문세상황에서 특정값(false, null) 반환하는 메소드
+		
 		
 	}
 }
