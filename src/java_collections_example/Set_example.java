@@ -78,7 +78,7 @@ public class Set_example {
 		set2.add(new Num1(3));
 		set2.add(new Num1(1));
 		
-		// 인스턴스의 Hash 값 판단은 Object 의 equals 와 hashcode 메소드로 판단한다.
+		// 인스턴스의 Hash 값 판단은 Object 의 "equals" 와 "hashcode" 메소드로 판단한다.
 		// Num1 은 두 메소드를 override 하지않았다.
 		System.out.println("set2 = " + set2); // set2 = [1, 3, 2, 1]
 		

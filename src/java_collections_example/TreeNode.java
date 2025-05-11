@@ -10,6 +10,11 @@ public class TreeNode implements Comparable<TreeNode> {
 	
 	}
 	
+	public TreeNode(int i) {
+		this.i = i;
+		this.name = "default name" + String.valueOf(i);
+	}
+	
 	public TreeNode(int i, String name) {
 		this.i = i;
 		this.name = name;

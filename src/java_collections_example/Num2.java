@@ -2,6 +2,7 @@ package java_collections_example;
 
 import java.util.Objects;
 
+// Hash 구조를 위한 것
 public class Num2 {
 	
 	private Integer i;
@@ -21,6 +22,9 @@ public class Num2 {
 	
 	@Override
 	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
 		if (o == null || getClass() != o.getClass()) {
 			return false;
 		}
