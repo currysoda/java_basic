@@ -10,6 +10,7 @@
 - 6 Arrays 클래스 (arrays_class)
 - 7 Generics 클래스 (generics_example)
 - 8 컬렉션 프레임워크 (java_collections_example)
+- 9 Enum 클래스 (enum_example)
 
 
 
