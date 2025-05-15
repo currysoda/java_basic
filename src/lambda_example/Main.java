@@ -6,8 +6,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.PrimitiveIterator;
 
+
 public class Main {
-	
 	
 	public static void main(String[] args) {
 		// 네스티드 클래스 이너 클래스에 대한 설명은 건너뛰고 익명 클래스에서 시작
@@ -53,7 +53,6 @@ public class Main {
 		
 		// 매개변수가 있고 반환형이 없는 람다식
 		// 함수 몸체 중괄호 생략 매개변수 소괄호 생략
-		// 매개변수가 둘 이상이면 소괄호
 		Printable printable3 = s -> System.out.println(s);
 		
 		printable3.print("매개변수가 있고 반환형이 없는 람다식");
@@ -91,5 +90,16 @@ public class Main {
 		System.out.println("add2.add(10, 20) = " + add2.add(10, 20));
 		
 		// 매개변수가 없는 람다식
+		// 매개변수 소괄호를 생략할 수 없음(메소드임을 표시하기 위해)
+		PrintHi printHi1 = () -> System.out.println("Hi");
+		
+		// 람다식에 제네릭스 적용
+		// 타입 정보는 참조 변수 타입으로 전달한다.
+		LambdaGenerics<Integer> lambdaGenerics = (a, b) -> a + b;
+		
+		// 제네릭이 적용된 람다식 출력
+		System.out.println("lambdaGenerics.calc(1, 2); = " + lambdaGenerics.calc(1, 2));
+		
+		
 	}
 }

@@ -10,4 +10,11 @@ public interface Printable {
 	// 함수형 인터페이스에서 메소드 2개 이상이면 컴파일 에러 발생
 	//	public void input(String s); // 주석 해제시 에러 발생
 	
+	public static void printStatic(String s) {
+		System.out.println("FunctionalInterface static method");
+	}
+	
+	public default void printDefault(String s) {
+		System.out.println("FunctionalInterface default method");
+	}
 }
