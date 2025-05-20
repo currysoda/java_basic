@@ -13,7 +13,7 @@
 - 9 Enum 클래스 (enum_example)
 - 10 varargs declaration 가변 인자 선언 (varargs_declaration_example)
 - 11 람다 lambda (lambda_example)
-- 12 메소드 참조 (methodreferences)
+- 12 메소드 참조 (methodreferences_example)
 
 
 
