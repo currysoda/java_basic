@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.BinaryOperator;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
@@ -165,7 +166,42 @@ public class Main {
 		//			최종연산
 		
 		// 자주 쓰는 최종 연산
+		Stream<String> stream13 = Stream.of("fdasdfasdfas", "zdsfasdfa", "asdf");
+		long           result3  = stream13.count();
 		
-		ㅁㄴㅇㄹ
+		System.out.println("result3 = " + result3); // result3 = 3
+		
+		// allMatch anyMatch noneMatch
+		//`allMatch` 는 요소 모두가 조건에 맞아야 `true` 반환 `anyMatch` 는 요소 중 하나만 맞아도 `true` 반환
+		// `noneMatch` 는 모든 요소가 조건에 맞지 않아야 `true` 반환
+		List<Integer>   list4    = new ArrayList<>(Arrays.asList(1, 2, 3, 4, -1));
+		Stream<Integer> stream14 = list4.stream();
+		Stream<Integer> stream15 = list4.stream();
+		Stream<Integer> stream16 = list4.stream();
+		
+		System.out.println("stream14.allMatch(s -> s >= 0) = " + stream14.allMatch(s -> s >= 0)); // false
+		System.out.println("stream14.allMatch(s -> s >= 0) = " + stream15.anyMatch(s -> s >= 0)); // true
+		System.out.println("stream14.allMatch(s -> s >= 0) = " + stream16.noneMatch(s -> s >= 0)); // false
+		
+		// collect
+		// collect 는 스트림의 연산 최종 결과를 다른 곳에 저장할 때 사용한다.
+		Stream<Integer> stream17 = list4.stream();
+		// 첫 번째 매개변수는 저장할 저장소 생성 두 번째 매개변수는 저장소와 stream 의 요소 세번째 매개변수는 스트림의 연결인데 병렬 스트림에서 사용한다.
+		// 세번째 매개변수는 병렬 스트림에서 사용하지만 병렬 스트림이 아니더라도 구현해야한다.(미구현시 NullPointerException)
+		List<Integer> list5 = stream17.collect(() -> new ArrayList<>(),
+		                                       (c, s) -> c.add(s),
+		                                       (templist1, templist2) -> templist1.addAll(templist2));
+		System.out.println("list5 = " + list5); // list5 = [1, 2, 3, 4, -1]
+		
+		// 병렬 스트림의 collect
+		Stream<Integer> stream18 = list4.stream();
+		// collect 의 세번째 매개변수는 병렬 스트림을 위한 것이다. 각각 처리 후 마지막에 합쳐주는 것
+		List<Integer> list6 = stream18.parallel()
+		                              .collect(() -> new ArrayList<>(),
+		                                       (c, s) -> c.add(s),
+		                                       ((templist1, templist2) -> templist1.addAll(templist2)));
+		System.out.println("list6 = " + list6); // list6 = [1, 2, 3, 4, -1]
+		
+		
 	}
 }
