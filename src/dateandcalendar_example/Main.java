@@ -8,6 +8,7 @@ import java.time.LocalTime;
 import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Main {
 	
@@ -169,8 +170,24 @@ public class Main {
 		ZonedDateTime zonedDateTime2 = ZonedDateTime.now();
 		ZonedDateTime zonedDateTime3 = ZonedDateTime.of(2025, 1, 1, 1, 1, 1, 1, zoneId2);
 		
-		System.out.println("zonedDateTime1 = " + zonedDateTime1);
-		System.out.println("zonedDateTime2 = " + zonedDateTime2);
-		System.out.println("zonedDateTime3 = " + zonedDateTime3);
+		System.out.println("zonedDateTime1 = " + zonedDateTime1); // YYYY-MM-DD'T'HH:MM:SS.nanoSecond+-UTC[region/city]
+		System.out.println("zonedDateTime1.getYear() = " + zonedDateTime1.getYear());
+		System.out.println("zonedDateTime1.getMonth() = " + zonedDateTime1.getMonth());
+		System.out.println("zonedDateTime1.getMonth().getValue() = " + zonedDateTime1.getMonth().getValue());
+		System.out.println("zonedDateTime1.getDayOfMonth() = " + zonedDateTime1.getDayOfMonth());
+		System.out.println("zonedDateTime1.getDayOfWeek() = " + zonedDateTime1.getDayOfWeek());
+		System.out.println("zonedDateTime1.getHour() = " + zonedDateTime1.getHour());
+		System.out.println("zonedDateTime1.getMinute() = " + zonedDateTime1.getMinute());
+		System.out.println("zonedDateTime1.getSecond() = " + zonedDateTime1.getSecond());
+		System.out.println("zonedDateTime1.getZone() = " + zonedDateTime1.getZone());
+		
+		// 날짜와 시간의 출력 포맷 설정
+		// y = 연, M = 월, d = 일, H = 시, m = 분, s = 초, VV = 시간대
+		DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy-MM-dd, HH:mm:ss [VV]");
+		DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yy-MM-dd, HH:mm:ss [VV]");
+		
+		System.out.println("dtf1.format(zonedDateTime1) = " + dtf1.format(zonedDateTime1));
+		System.out.println("dtf2.format(zonedDateTime1) = " + dtf2.format(zonedDateTime1));
+		
 	}
 }
